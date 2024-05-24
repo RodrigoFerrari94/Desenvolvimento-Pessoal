@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcular Evolução</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      select {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Saúde Física e Mental</legend>
+
+      <label for="comerFrutass">Comeu Frutas e Verduras? </label>
+      <select name="comerFrutass" id="comerFrutas">
+        <option value="maisUm">Sim</option> 
+        <option value="zero">Não</option>
+      </select>
+      <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
+      <select name="comerPorcaria" id="comerPorcaria">
+        <option value="menosUm">Sim</option>
+        <option value="zero">Não</option>
+      </select>
+      <label for="beberAgua">Bebeu quanto de água hoje? </label>
+      <select name="beberAgua" id="beberAgua">
+        <option value="maisUm">Mais de 2 litros</option>
+        <option value="menosUm">Menos de 2 litros</option>
+      </select>
+      <label for="atividadeFisica">Atividade Física? </label>
+      <select name="atividadeFisica" id="atividadeFisica">
+        <option value="maisUm">Mais de 1 hora</option>
+        <option value="zero">Menos de 1 hora</option>
+        <option value="menosUm">Não praticou</option>
+      </select>
+      <label for="dormir">Dormiu quantas horas? </label>
+      <select name="dormir" id="dormir">
+        <option value="maisUm">7 a 8 horas</option>
+        <option value="zero">6 horas</option>
+        <option value="menosUm">- de 6 ou + de 8 horas</option>
+      </select>
+    </select>
+    <label for="familia">Passou tempo de qualidade com sua família? </label>
+    <select name="familia" id="familia">
+      <option value="maisUm">Mais de 1 hora</option>
+      <option value="zero">Até 1 hora</option>
+      <option value="menosUm">Dia corrido</option>
+    </select>
+    <label for="meditar">Praticou Meditação? </label>
+    <select name="meditar" id="meditar">
+      <option value="maisUm">Mais de 20 minutos</option>
+      <option value="zero">Menos de 20 minutos</option>
+      <option value="menosUm">Não Praticou</option>
+    </select>
+    <label for="celular">Perdeu tempo nas redes sociais ou outras atividades procastinadoras? </label>
+    <select name="celular" id="celular">
+      <option value="menosDois">Sim</option>
+      <option value="zero">Não</option>
+    </select>
+      <label for="cafe">Bebeu café depois das 14:00? </label>
+      <select name="cafe" id="cafe">
+        <option value="menosDois">Sim</option>
+        <option value="zero">Não</option>
+      </select>
+      <label for="alcool">Bebeu excesso de álcool ou fumou? </label>
+      <select name="alcool" id="alcool">
+        <option value="menosCinco">Sim</option>
+        <option value="zero">Não</option>
+   
+    </fieldset>
+    <fieldset>
+      <legend>Desenvolvimento Espiritual</legend>
+      <label for="biblia">Leu a Bíblia hoje?</label>
+      <select name="biblia" id="biblia">
+        <option value="maisUm">1 capítulo ou mais</option>
+        <option value="zero">Alguns Versículos</option>
+        <option value="menosUm">Não</option>
+      </select>
+      <label for="cristo">Meditou em Cristo?</label>
+      <select name="cristo" id="cristo">
+        <option value="maisUm">Meditei alguns minutos</option>
+        <option value="zero">Não meditei</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Desenvolvimento Intelectual</legend>
+      <label for="intelectual"
+        >Leu algum livro de evolução emocional,finanças, oratória ou
+        afins?</label
+      >
+      <select name="intelectual" id="intelectual">
+        <option value="maisDois">Mais de 20 páginas</option>
+        <option value="maisUm">De 10 a 20 páginas</option>
+        <option value="zero">De 2 a 10 páginas</option>
+        <option value="menosDois">Não leu nada</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Desenvolvimento Profissional</legend>
+      <label for="idioma">Estudou ou praticou algum idioma hoje?</label>
+      <select name="idioma" id="idioma">
+        <option value="maisUm">Estudou/Praticou mais de 30 minutos</option>
+        <option value="zero">Estudou/Praticou até 30 minutos</option>
+        <option value="menosDois">Não</option>
+      </select>
+      <label for="programaçao">Estudou programação hoje?</label>
+      <select name="programaçao" id="programaçao">
+        <option value="maisUm">Estudou/Praticou mais de 1 hora</option>
+        <option value="zero">Estudou/Praticou até 1 hora</option>
+        <option value="menosDois">Não</option>
+      </select>
+      <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
+      <select name="projeto" id="projeto">
+        <option value="maisDois">Mais de 1 hora</option>
+        <option value="zero">Até 1 hora</option>
+        <option value="menosDois">Não</option>
+      </select>
+    </fieldset>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="resultado"></div>
+    <script>
+    
+        function calcular(){
+            let comerFrutas = document.getElementById("comerFrutas").value;
+        let resultado = document.getElementById("resultado");
+        resultado.innerHTML = comerFrutas
+            
+    
+        }
+    
+    
+      </script>
+  </body>
+</html>
