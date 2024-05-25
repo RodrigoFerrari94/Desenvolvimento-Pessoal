@@ -68,10 +68,12 @@
       }
       @media (max-width: 1100px) {
         #calc {
-          font-size: 1em;
           position: relative;
           top: auto;
           left: auto;
+        }
+        input {
+          font-size: 0.4em;
         }
       }
     </style>
@@ -79,22 +81,6 @@
   <body>
     <section>
       <fieldset>
-        <legend>Saúde Física e Mental</legend>
-        <label for="comerFrutas">Comeu Frutas e Verduras? </label>
-        <select name="comerFrutas" id="comerFrutas">
-          <option value="1">Sim</option>
-          <option value="0">Não</option>
-        </select>
-        <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
-        <select name="comerPorcaria" id="comerPorcaria">
-          <option value="-1">Sim</option>
-          <option value="0">Não</option>
-        </select>
-        <label for="beberAgua">Bebeu quanto de água hoje? </label>
-        <select name="beberAgua" id="beberAgua">
-          <option value="1">Mais de 2 litros</option>
-          <option value="-1">Menos de 2 litros</option>
-        </select>
         <label for="atividadeFisica">Atividade Física? </label>
         <select name="atividadeFisica" id="atividadeFisica">
           <option value="1">Mais de 1 hora</option>
@@ -107,10 +93,6 @@
           <option value="0">6 horas</option>
           <option value="-1">- de 6 ou + de 8 horas</option>
         </select>
-      </fieldset>
-      <fieldset>
-        <legend>Saúde Física e Mental</legend>
-
         <label for="familia">Passou tempo de qualidade com sua família? </label>
         <select name="familia" id="familia">
           <option value="1">Mais de 1 hora</option>
@@ -123,6 +105,26 @@
           <option value="0">Menos de 20 minutos</option>
           <option value="-1">Não Praticou</option>
         </select>
+      </fieldset>
+      <fieldset>
+        <legend>Bons e Maus Hábitos</legend>
+        <legend>Saúde Física e Mental</legend>
+        <label for="comerFrutas">Comeu Frutas e Verduras? </label>
+        <select name="comerFrutas" id="comerFrutas">
+          <option value="0">Sim</option>
+          <option value="-1">Não</option>
+        </select>
+        <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
+        <select name="comerPorcaria" id="comerPorcaria">
+          <option value="-1">Sim</option>
+          <option value="0">Não</option>
+        </select>
+        <label for="beberAgua">Bebeu quanto de água hoje? </label>
+        <select name="beberAgua" id="beberAgua">
+          <option value="0">Mais de 2 litros</option>
+          <option value="-1">Menos de 2 litros</option>
+        </select>
+
         <label for="celular"
           >Perdeu tempo nas redes sociais ou outras atividades procastinadoras?
         </label>
@@ -145,14 +147,15 @@
         <legend>Desenvolvimento Espiritual</legend>
         <label for="biblia">Leu a Bíblia hoje?</label>
         <select name="biblia" id="biblia">
-          <option value="1">1 capítulo ou mais</option>
+          <option value="2">1 capítulo ou mais</option>
           <option value="0">Alguns Versículos</option>
-          <option value="-1">Não</option>
+          <option value="-2">Não</option>
         </select>
         <label for="cristo">Meditou em Cristo?</label>
         <select name="cristo" id="cristo">
-          <option value="1">Meditei alguns minutos</option>
-          <option value="0">Não meditei</option>
+          <option value="1">Meditei e orei/congreguei</option>
+          <option value="0">Meditei alguns minutos</option>
+          <option value="-1">Não meditei</option>
         </select>
       </fieldset>
       <fieldset>
@@ -174,11 +177,11 @@
         <select name="idioma" id="idioma">
           <option value="1">Estudou/Praticou mais de 30 minutos</option>
           <option value="0">Estudou/Praticou até 30 minutos</option>
-          <option value="-2">Não</option>
+          <option value="-1">Não</option>
         </select>
         <label for="programaçao">Estudou programação hoje?</label>
         <select name="programaçao" id="programaçao">
-          <option value="1">Estudou/Praticou mais de 1 hora</option>
+          <option value="2">Estudou/Praticou mais de 1 hora</option>
           <option value="0">Estudou/Praticou até 1 hora</option>
           <option value="-2">Não</option>
         </select>
