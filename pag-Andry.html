@@ -112,6 +112,11 @@
           <option class="vermelho" value="-2">Sim</option>
           <option class="amarelo" value="0" selected>Não</option>
         </select>
+        <label for="orar">Bebeu café depois das 14:00? </label>
+        <select name="orar" id="orar">
+          <option class="vermelho" value="-2">Sim</option>
+          <option class="amarelo" value="0" selected>Não</option>
+        </select>
       </fieldset>
     </section>
 
@@ -133,6 +138,8 @@
 
         let meditar = Number(document.getElementById("meditar").value);
         let celular = Number(document.getElementById("celular").value);
+        let orar = Number(document.getElementById("orar").value);
+
         let biblia = Number(document.getElementById("biblia").value);
         let cristo = Number(document.getElementById("cristo").value);
         let intelectual = Number(document.getElementById("intelectual").value);
@@ -148,6 +155,7 @@
           meditar +
           celular +
           organizacao +
+          orar +
           biblia +
           cristo +
           intelectual +
