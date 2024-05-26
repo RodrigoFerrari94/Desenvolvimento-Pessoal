@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calcular Evolução Vitória</title>
+    <title>Calcular Evolução Rodrigo</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>Vitória</h1>
+      <h1>Rodrigo Ferrari</h1>
       <nav>
         <a href="index.html">Rodrigo</a>
         <a href="pag-Alencar.html">Alencar</a>
@@ -19,31 +19,29 @@
     <section>
       <fieldset>
         <legend>Saúde Física e Mental</legend>
-        <label for="atividadeFisica">Atividade Física? </label>
+        <label for="atividadeFisica">Atividade Física/Dieta? </label>
         <select name="atividadeFisica" id="atividadeFisica">
-          <option class="verde" value="1">Mais de 1 hora</option>
-          <option class="amarelo" value="0">Menos de 1 hora</option>
-          <option class="vermelho" value="-1" selected>Não praticou</option>
-        </select>
-        <label for="dormir">Dormiu quantas horas? </label>
-        <select name="dormir" id="dormir">
-          <option class="verde" value="1">7 a 8 horas</option>
-          <option class="amarelo" value="0">6 horas</option>
-          <option class="vermelho" value="-1" selected>
-            - de 6 ou + de 8 horas
+          <option class="verde" value="2">Seguiu Rigorozamente (2%)</option>
+          <option class="amarelo" value="0">Fez Meia Boca (0%)</option>
+          <option class="vermelho" value="-2" selected> Se perdeu (-2%)
           </option>
+        </select>
+        <label for="meditar">Praticou Meditação </label>
+        <select name="meditar" id="meditar">
+          <option class="verde" value="1">Mais de 30 minutos (1%)</option>
+          <option class="amarelo" value="0">Até 30 minutos (0%)</option>
+          <option class="vermelho" value="-1" selected> Não (-1%)
+          </option>
+        </select>
+    
         </select>
         <label for="familia">Passou tempo de qualidade com sua família? </label>
         <select name="familia" id="familia">
-          <option class="verde" value="1">Mais de 1 hora</option>
-          <option class="amarelo" value="0">Até 1 hora</option>
-          <option class="vermelho" value="-1" selected>Dia corrido</option>
-        </select>
-        <label for="meditar">Praticou Meditação? </label>
-        <select name="meditar" id="meditar">
-          <option class="verde" value="1">Mais de 20 minutos</option>
-          <option class="amarelo" value="0">Menos de 20 minutos</option>
-          <option class="vermelho" value="-1" selected>Não Praticou</option>
+          <option class="verde" value="2">Mais de 1 hora (2%)</option>
+          <option class="amarelo" value="0">Até 1 hora (0%)</option>
+          <option class="vermelho" value="-2" selected>
+            Não dediquei a família um tempo de qualidade (-2%)
+          </option>
         </select>
       </fieldset>
 
@@ -51,16 +49,11 @@
         <legend>Desenvolvimento Espiritual</legend>
         <label for="biblia">Leu a Bíblia hoje?</label>
         <select name="biblia" id="biblia">
-          <option class="verde" value="2">7 capítulos ou mais</option>
-          <option class="amarelo" value="0">Até sete capítulos</option>
-          <option class="vermelho" value="-2" selected>Não</option>
+          <option class="verde" value="2">7 capítulos ou mais (2%)</option>
+          <option class="amarelo" value="0">Até sete capítulos (0%)</option>
+          <option class="vermelho" value="-2" selected>Não (-2%)</option>
         </select>
-        <label for="cristo">Meditou em Cristo?</label>
-        <select name="cristo" id="cristo">
-          <option class="verde" value="1">Meditei e orei/congreguei</option>
-          <option class="amarelo" value="0">Meditei alguns minutos</option>
-          <option class="vermelho" value="-1" selected>Não meditei</option>
-        </select>
+    
       </fieldset>
       <fieldset>
         <legend>Desenvolvimento Intelectual</legend>
@@ -69,37 +62,32 @@
           afins?</label
         >
         <select name="intelectual" id="intelectual">
-          <option class="verde" value="2">Mais de 20 páginas</option>
-          <option class="amarelo1" value="1">De 10 a 20 páginas</option>
-          <option class="amarelo" value="0">De 2 a 10 páginas</option>
-          <option class="vermelho" value="-2" selected>Não leu nada</option>
+          <option class="verde" value="3">Mais de 20 páginas (3%)</option>
+          <option class="amarelo1" value="1">De 10 a 20 páginas (1%)</option>
+          <option class="amarelo" value="0">De 2 a 10 páginas (0%)</option>
+          <option class="vermelho" value="-2" selected>
+            Não leu nada (-3%)
+          </option>
         </select>
       </fieldset>
       <fieldset>
         <legend>Desenvolvimento Profissional</legend>
         <label for="idioma">Estudou ou praticou algum idioma hoje?</label>
         <select name="idioma" id="idioma">
-          <option class="verde" value="1" selected>
-            Estudou/Praticou mais de 30 minutos
+          <option class="verde" value="2" selected>
+            Estudou/Praticou mais de 20 minutos (2%)
           </option>
           <option class="amarelo" value="0">
-            Estudou/Praticou até 30 minutos
+            Estudou/Praticou até 20 minutos (0%)
           </option>
-          <option class="vermelho" value="-1" selected>Não</option>
+          <option class="vermelho" value="-2" selected>Não (-2%)</option>
         </select>
-        <label for="programaçao">Estudou programação hoje?</label>
-        <select name="programaçao" id="programaçao">
-          <option class="verde" value="2">
-            Estudou/Praticou mais de 1 hora
-          </option>
-          <option class="amarelo" value="0">Estudou/Praticou até 1 hora</option>
-          <option class="vermelho" value="-2" selected>Não</option>
-        </select>
+      
         <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
         <select name="projeto" id="projeto">
-          <option class="verde" value="2">Mais de 1 hora</option>
-          <option class="amarelo" value="0">Até 1 hora</option>
-          <option class="vermelho" value="-2" selected>Não</option>
+          <option class="verde" value="2">Mais de 1 hora (2%)</option>
+          <option class="amarelo" value="0">Até 1 hora (0%)</option>
+          <option class="vermelho" value="-2" selected>Não (-2%)</option>
         </select>
       </fieldset>
       <fieldset>
@@ -107,41 +95,39 @@
 
         <label for="comerFrutas">Comeu Frutas e Verduras? </label>
         <select name="comerFrutas" id="comerFrutas">
-          <option class="amarelo" value="0" selected>Sim</option>
-          <option class="vermelho" value="-1">Não</option>
+          <option class="amarelo" value="0" selected>Sim (0%)</option>
+          <option class="vermelho" value="-1">Não (-1%)</option>
         </select>
         <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
         <select name="comerPorcaria" id="comerPorcaria">
-          <option class="vermelho" value="-1">Sim</option>
-          <option class="amarelo" value="0" selected>Não</option>
+          <option class="vermelho" value="-2">Sim (-2%)</option>
+          <option class="amarelo" value="0" selected>Não (0%)</option>
         </select>
         <label for="beberAgua">Bebeu quanto de água hoje? </label>
         <select name="beberAgua" id="beberAgua">
-          <option class="amarelo" value="0" selected>Mais de 2 litros</option>
-          <option class="vermelho" value="-1">Menos de 2 litros</option>
+          <option class="amarelo" value="0" selected>
+            Mais de 2 litros (0%)
+          </option>
+          <option class="vermelho" value="-1">Menos de 2 litros (-1%)</option>
         </select>
         <label for="organizaçao">Manteve a casa organizada? </label>
         <select name="organizaçao" id="organizaçao">
-          <option class="amarelo" value="0" selected>Sim</option>
-          <option class="vermelho" value="-1">Não</option>
+          <option class="amarelo" value="0" selected>Sim (0%)</option>
+          <option class="vermelho" value="-2">Não (-2%)</option>
         </select>
 
         <label for="celular"
           >Perdeu tempo nas redes sociais ou outras atividades procastinadoras?
         </label>
         <select name="celular" id="celular">
-          <option class="vermelho" value="-2">Sim</option>
-          <option class="amarelo" value="0" selected>Não</option>
+          <option class="vermelho" value="-3">Sim (-3%)</option>
+          <option class="amarelo" value="0" selected>Não (0%)</option>
         </select>
-        <label for="cafe">Bebeu café depois das 14:00? </label>
-        <select name="cafe" id="cafe">
-          <option class="vermelho" value="-2">Sim</option>
-          <option class="amarelo" value="0" selected>Não</option>
-        </select>
+        
         <label for="alcool">Bebeu excesso de álcool ou fumou? </label>
         <select name="alcool" id="alcool">
-          <option class="vermelho" value="-5">Sim</option>
-          <option class="amarelo" value="0" selected>Não</option>
+          <option class="vermelho" value="-5">Sim (-5%)</option>
+          <option class="amarelo" value="0" selected>Não (0%)</option>
         </select>
       </fieldset>
     </section>
@@ -150,6 +136,7 @@
       <input type="button" value="Calcular" onclick="calcular()" />
       <div id="resultado"></div>
     </div>
+
     <script>
       function calcular() {
         let comerFrutas = Number(document.getElementById("comerFrutas").value);
@@ -161,17 +148,14 @@
           document.getElementById("atividadeFisica").value
         );
         let organizacao = Number(document.getElementById("organizaçao").value);
-        let dormir = Number(document.getElementById("dormir").value);
         let familia = Number(document.getElementById("familia").value);
-        let meditar = Number(document.getElementById("meditar").value);
         let celular = Number(document.getElementById("celular").value);
-        let cafe = Number(document.getElementById("cafe").value);
         let alcool = Number(document.getElementById("alcool").value);
         let biblia = Number(document.getElementById("biblia").value);
-        let cristo = Number(document.getElementById("cristo").value);
+        let meditar = Number(document.getElementById("meditar").value);
         let intelectual = Number(document.getElementById("intelectual").value);
         let idioma = Number(document.getElementById("idioma").value);
-        let programacao = Number(document.getElementById("programaçao").value);
+        
         let projeto = Number(document.getElementById("projeto").value);
 
         let resultado = document.getElementById("resultado");
@@ -180,18 +164,14 @@
           comerPorcaria +
           beberAgua +
           atividadeFisica +
-          dormir +
           familia +
-          meditar +
           celular +
           organizacao +
-          cafe +
           alcool +
           biblia +
-          cristo +
+          meditar +
           intelectual +
           idioma +
-          programacao +
           projeto;
       }
     </script>
