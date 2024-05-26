@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calcular Evolução Rodrigo</title>
+    <title>Calcular Evolução Alencar</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>Rodrigo Ferrari</h1>
+      <h1>Alencar</h1>
       <nav>
         <a href="index.html">Rodrigo</a>
         <a href="pag-Alencar.html">Alencar</a>
@@ -21,9 +21,9 @@
         <legend>Saúde Física e Mental</legend>
         <label for="atividadeFisica">Atividade Física? </label>
         <select name="atividadeFisica" id="atividadeFisica">
-          <option value="1">Mais de 1 hora</option>
-          <option value="0">Menos de 1 hora</option>
-          <option value="-1" selected>Não praticou</option>
+          <option value="1">Completar o treino</option>
+          <option value="0">Treino Meia Boca</option>
+          <option value="-1" selected>Sem Treino</option>
         </select>
         <label for="dormir">Dormiu quantas horas? </label>
         <select name="dormir" id="dormir">
@@ -39,8 +39,8 @@
         </select>
         <label for="meditar">Praticou Meditação? </label>
         <select name="meditar" id="meditar">
-          <option value="1">Mais de 20 minutos</option>
-          <option value="0">Menos de 20 minutos</option>
+          <option value="1">Mais de 10 minutos</option>
+          <option value="0">Até 10 minutos</option>
           <option value="-1" selected>Não Praticou</option>
         </select>
       </fieldset>
@@ -49,11 +49,11 @@
         <legend>Desenvolvimento Espiritual</legend>
         <label for="biblia">Leu a Bíblia hoje?</label>
         <select name="biblia" id="biblia">
-          <option value="2">7 capítulos ou mais</option>
-          <option value="0">Até sete capítulos</option>
+          <option value="2">1 página</option>
+          <option value="0">Menos de 1 página</option>
           <option value="-2" selected>Não</option>
         </select>
-        <label for="cristo">Meditou em Cristo?</label>
+        <label for="cristo">Se conectar com Cristo?</label>
         <select name="cristo" id="cristo">
           <option value="1">Meditei e orei/congreguei</option>
           <option value="0">Meditei alguns minutos</option>
@@ -67,25 +67,31 @@
           afins?</label
         >
         <select name="intelectual" id="intelectual">
-          <option value="2">Mais de 20 páginas</option>
-          <option value="1">De 10 a 20 páginas</option>
-          <option value="0">De 2 a 10 páginas</option>
+          <option value="2">Mais de 15 páginas</option>
+          <option value="1">De 7 a 15 páginas</option>
+          <option value="0">De 2 a 7 páginas</option>
           <option value="-2" selected>Não leu nada</option>
         </select>
       </fieldset>
       <fieldset>
         <legend>Desenvolvimento Profissional</legend>
-        <label for="idioma">Estudou ou praticou algum idioma hoje?</label>
+        <label for="idioma">Estudou Duolingo?</label>
         <select name="idioma" id="idioma">
-          <option value="1">Estudou/Praticou mais de 30 minutos</option>
-          <option value="0">Estudou/Praticou até 30 minutos</option>
+          <option value="1">Estudou/Praticou mais de 20 minutos</option>
+          <option value="0">Estudou/Praticou até 20 minutos</option>
           <option value="-1" selected>Não</option>
         </select>
-        <label for="programaçao">Estudou programação hoje?</label>
-        <select name="programaçao" id="programaçao">
-          <option value="2">Estudou/Praticou mais de 1 hora</option>
-          <option value="0">Estudou/Praticou até 1 hora</option>
-          <option value="-2" selected>Não</option>
+        <label for="estudoJiu">Estudou JiuJitso hoje?</label>
+        <select name="estudoJiu" id="estudoJiu">
+          <option value="1">Estudou mais de 30 minutos</option>
+          <option value="0">Estudou até 30 minutos</option>
+          <option value="-1" selected>Não</option>
+        </select>
+        <label for="treinoJiu">Treinou JiuJitso hoje?</label>
+        <select name="treinoJiu" id="treinoJiu">
+          <option value="1">Treinou mais de 40 minutos</option>
+          <option value="0">Treinou até 30 minutos</option>
+          <option value="-1" selected>Não</option>
         </select>
         <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
         <select name="projeto" id="projeto">
@@ -97,25 +103,25 @@
       <fieldset>
         <legend>Bons e Maus Hábitos</legend>
 
-        <label for="comerFrutas">Comeu Frutas e Verduras? </label>
-        <select name="comerFrutas" id="comerFrutas">
-          <option value="0">Sim</option>
-          <option value="-1" selected>Não</option>
+        <label for="dieta">Seguiu a Dieta?</label>
+        <select name="dieta" id="dieta">
+          <option value="0" selected>Sim</option>
+          <option value="-1">Não</option>
         </select>
         <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
         <select name="comerPorcaria" id="comerPorcaria">
-          <option value="-1">Sim</option>
+          <option value="-2">Sim</option>
           <option value="0" selected>Não</option>
         </select>
         <label for="beberAgua">Bebeu quanto de água hoje? </label>
         <select name="beberAgua" id="beberAgua">
           <option value="0" selected>Mais de 2 litros</option>
-          <option value="-1">Menos de 2 litros</option>
+          <option value="-2">Menos de 2 litros</option>
         </select>
-        <label for="organizaçao">Manteve a casa organizada? </label>
+        <label for="organizaçao">Organizou suas coisas em casa? </label>
         <select name="organizaçao" id="organizaçao">
           <option value="0" selected>Sim</option>
-          <option value="-1">Não</option>
+          <option value="-2">Não</option>
         </select>
 
         <label for="celular"
@@ -125,14 +131,9 @@
           <option value="-2">Sim</option>
           <option value="0" selected>Não</option>
         </select>
-        <label for="cafe">Bebeu café depois das 14:00? </label>
+        <label for="cafe">Bebeu café a noite? </label>
         <select name="cafe" id="cafe">
-          <option value="-2">Sim</option>
-          <option value="0" selected>Não</option>
-        </select>
-        <label for="alcool">Bebeu excesso de álcool ou fumou? </label>
-        <select name="alcool" id="alcool">
-          <option value="-5">Sim</option>
+          <option value="-1">Sim</option>
           <option value="0" selected>Não</option>
         </select>
       </fieldset>
@@ -144,7 +145,7 @@
     </div>
     <script>
       function calcular() {
-        let comerFrutas = Number(document.getElementById("comerFrutas").value);
+        let dieta = Number(document.getElementById("dieta").value);
         let comerPorcaria = Number(
           document.getElementById("comerPorcaria").value
         );
@@ -158,17 +159,17 @@
         let meditar = Number(document.getElementById("meditar").value);
         let celular = Number(document.getElementById("celular").value);
         let cafe = Number(document.getElementById("cafe").value);
-        let alcool = Number(document.getElementById("alcool").value);
         let biblia = Number(document.getElementById("biblia").value);
         let cristo = Number(document.getElementById("cristo").value);
         let intelectual = Number(document.getElementById("intelectual").value);
         let idioma = Number(document.getElementById("idioma").value);
-        let programacao = Number(document.getElementById("programaçao").value);
+        let estudoJiu = Number(document.getElementById("estudoJiu").value);
+        let treinoJiu = Number(document.getElementById("treinoJiu").value);
         let projeto = Number(document.getElementById("projeto").value);
 
         let resultado = document.getElementById("resultado");
         resultado.innerHTML =
-          comerFrutas +
+          dieta +
           comerPorcaria +
           beberAgua +
           atividadeFisica +
@@ -178,12 +179,12 @@
           celular +
           organizacao +
           cafe +
-          alcool +
+          treinoJiu +
           biblia +
           cristo +
           intelectual +
           idioma +
-          programacao +
+          estudoJiu +
           projeto;
       }
     </script>
