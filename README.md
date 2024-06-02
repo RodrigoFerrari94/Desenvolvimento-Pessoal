@@ -1,2 +1,2 @@
 # Desenvolvimento-Pessoal
- App para calcular pontuação e parametros semanais de tarefas de Desenvolvimento
+ App para calcular pontuação e parâmetros semanais de tarefas de desenvolvimento.
