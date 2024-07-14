@@ -21,10 +21,10 @@
         <legend>Saúde Física e Mental</legend>
         <label for="atividadeFisica">Atividade Física? </label>
         <select name="atividadeFisica" id="atividadeFisica">
-          <option class="verde" value="1">Mais de 1 hora (1%)</option>
-          <option class="amarelo" value="0">Menos de 1 hora (0%)</option>
-          <option class="vermelho" value="-1" selected>
-            Não praticou (-1%)
+          <option class="verde" value="2">Mais de 30 min (2%)</option>
+          <option class="amarelo" value="0">Até 30 min (0%)</option>
+          <option class="vermelho" value="-2" selected>
+            Não praticou (-2%)
           </option>
         </select>
         <label for="dormir">Dormiu quantas horas? </label>
@@ -101,18 +101,24 @@
         </select>
         <label for="programaçao">Estudou programação hoje?</label>
         <select name="programaçao" id="programaçao">
-          <option class="verde" value="2">
-            Estudou/Praticou mais de 1 hora (2%)
+          <option class="verde" value="1">
+            Estudou/Praticou mais de 1 hora (1%)
           </option>
           <option class="amarelo" value="0">
             Estudou/Praticou até 1 hora (0%)
           </option>
-          <option class="vermelho" value="-2" selected>Não (-2%)</option>
+          <option class="vermelho" value="-1" selected>Não (-1%)</option>
         </select>
         <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
         <select name="projeto" id="projeto">
           <option class="verde" value="2">Mais de 1 hora (2%)</option>
           <option class="amarelo" value="0">Até 1 hora (0%)</option>
+          <option class="vermelho" value="-2" selected>Não (-2%)</option>
+        </select>
+        <label for="Boxe">Treinou Boxe?</label>
+        <select name="Boxe" id="Boxe">
+          <option class="verde" value="2">Mais de 40 min (2%)</option>
+          <option class="amarelo" value="0">Até 40 min (0%)</option>
           <option class="vermelho" value="-2" selected>Não (-2%)</option>
         </select>
       </fieldset>
@@ -174,9 +180,7 @@
           document.getElementById("comerPorcaria").value
         );
         let beberAgua = Number(document.getElementById("beberAgua").value);
-        let atividadeFisica = Number(
-          document.getElementById("atividadeFisica").value
-        );
+        let atividadeFisica;
         let organizacao = Number(document.getElementById("organizaçao").value);
         let dormir = Number(document.getElementById("dormir").value);
         let familia = Number(document.getElementById("familia").value);
@@ -190,6 +194,15 @@
         let idioma = Number(document.getElementById("idioma").value);
         let programacao = Number(document.getElementById("programaçao").value);
         let projeto = Number(document.getElementById("projeto").value);
+        let boxe = Number(document.getElementById("Boxe").value);
+
+        if (boxe === 2 || boxe === -2) {
+          atividadeFisica = 0;
+        } else {
+          atividadeFisica = Number(
+            document.getElementById("atividadeFisica").value
+          );
+        }
 
         let resultado = document.getElementById("resultado");
         resultado.innerHTML =
@@ -209,6 +222,7 @@
           intelectual +
           idioma +
           programacao +
+          boxe +
           projeto +
           "%";
       }

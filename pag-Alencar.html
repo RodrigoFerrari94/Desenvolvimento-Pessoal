@@ -19,12 +19,14 @@
     <section>
       <fieldset>
         <legend>Saúde Física e Mental</legend>
+
         <label for="atividadeFisica">Atividade Física? </label>
         <select name="atividadeFisica" id="atividadeFisica">
-          <option value="1">Completar o treino (1%)</option>
-          <option value="0">Treino Meia Boca (0%)</option>
-          <option value="-1" selected>Sem Treino (-1%)</option>
+          <option value="2">Treinei mais de 1 hora (2%)</option>
+          <option value="0" selected>Até 1 Hora de treino (0%)</option>
+          <option value="-2">Sem Treino (-2%)</option>
         </select>
+
         <label for="dormir">Dormiu quantas horas? </label>
         <select name="dormir" id="dormir">
           <option value="1">7 a 8 horas (1%)</option>
@@ -70,7 +72,7 @@
           <option value="2">Mais de 15 páginas (2%)</option>
           <option value="1">De 7 a 15 páginas (1%)</option>
           <option value="0">De 2 a 7 páginas (0%)</option>
-          <option value="-2" selected>Não leu nada (-1%)</option>
+          <option value="-2" selected>Não leu nada (-2%)</option>
         </select>
       </fieldset>
       <fieldset>
@@ -81,17 +83,16 @@
           <option value="0">Estudou/Praticou até 20 minutos (0%)</option>
           <option value="-1" selected>Não (-1%)</option>
         </select>
-        <label for="estudoJiu">Estudou JiuJitso hoje?</label>
-        <select name="estudoJiu" id="estudoJiu">
-          <option value="1">Estudou mais de 30 minutos (1%)</option>
-          <option value="0">Estudou até 30 minutos (0%)</option>
+        <label for="oratoria"> Praticou Oratória hoje?</label>
+        <select name="oratoria" id="oratoria">
+          <option value="1">Treinou ou Gravou um video falando (1%)</option>
+          <option value="0">Estudou mas não Praticou? (0%)</option>
           <option value="-1" selected>Não (-1%)</option>
         </select>
         <label for="treinoJiu">Treinou JiuJitso hoje?</label>
         <select name="treinoJiu" id="treinoJiu">
-          <option value="1">Treinou mais de 40 minutos (1%)</option>
-          <option value="0">Treinou até 30 minutos (0%)</option>
-          <option value="-1" selected>Não (-1%)</option>
+          <option value="2">Treinou mais de 40 minutos (2%)</option>
+          <option value="0" selected>Treinou até 40 minutos (0%)</option>
         </select>
         <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
         <select name="projeto" id="projeto">
@@ -103,14 +104,14 @@
       <fieldset>
         <legend>Bons e Maus Hábitos</legend>
 
-        <label for="dieta">Seguiu a Dieta?</label>
+        <label for="dieta">Alimentação Saldável?</label>
         <select name="dieta" id="dieta">
           <option value="0" selected>Sim (0%)</option>
           <option value="-1">Não (-1%)</option>
         </select>
         <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
         <select name="comerPorcaria" id="comerPorcaria">
-          <option value="-2">Sim (-2%)</option>
+          <option value="-2">Sim (-1%)</option>
           <option value="0" selected>Não (0%)</option>
         </select>
         <label for="beberAgua">Bebeu quanto de água hoje? </label>
@@ -150,9 +151,7 @@
           document.getElementById("comerPorcaria").value
         );
         let beberAgua = Number(document.getElementById("beberAgua").value);
-        let atividadeFisica = Number(
-          document.getElementById("atividadeFisica").value
-        );
+        let atividadeFisica;
         let organizacao = Number(document.getElementById("organizaçao").value);
         let dormir = Number(document.getElementById("dormir").value);
         let familia = Number(document.getElementById("familia").value);
@@ -163,9 +162,17 @@
         let cristo = Number(document.getElementById("cristo").value);
         let intelectual = Number(document.getElementById("intelectual").value);
         let idioma = Number(document.getElementById("idioma").value);
-        let estudoJiu = Number(document.getElementById("estudoJiu").value);
+        let oratoria = Number(document.getElementById("oratoria").value);
         let treinoJiu = Number(document.getElementById("treinoJiu").value);
         let projeto = Number(document.getElementById("projeto").value);
+
+        if (treinoJiu === 2) {
+          atividadeFisica = 0;
+        } else {
+          atividadeFisica = Number(
+            document.getElementById("atividadeFisica").value
+          );
+        }
 
         let resultado = document.getElementById("resultado");
         resultado.innerHTML =
@@ -184,7 +191,7 @@
           cristo +
           intelectual +
           idioma +
-          estudoJiu +
+          oratoria +
           projeto +
           "%";
       }

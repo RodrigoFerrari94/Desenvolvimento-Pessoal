@@ -61,16 +61,7 @@
           >Leu algum livro de evolução emocional,finanças, oratória ou
           afins?</label
         >
-        <label for="enem">Estudou para o Enem hoje?</label>
-        <select name="enem" id="enem">
-          <option class="verde" value="1" selected>
-            Estudou mais de 20 minutos (1%)
-          </option>
-          <option class="amarelo" value="0">
-            Estudou até 20 minutos (0%)
-          </option>
-          <option class="vermelho" value="-1" selected>Não (-1%)</option>
-        </select>
+      
         <select name="intelectual" id="intelectual">
           <option class="verde" value="2">Mais de 20 páginas (2%)</option>
           <option class="amarelo1" value="1">De 10 a 20 páginas (1%)</option>
@@ -92,16 +83,14 @@
           </option>
           <option class="vermelho" value="-1" selected>Não (-1%)</option>
         </select>
-        <label for="boxe">Estudou Boxe hoje?</label>
-        <select name="boxe" id="boxe">
-          <option class="verde" value="1" selected>
-            Estudou mais de 30 minutos (1%)
-          </option>
-          <option class="amarelo" value="0">
-            Estudou/Praticou até 30 minutos (0%)
-          </option>
-          <option class="vermelho" value="-1" selected>Não (-1%)</option>
+        <label for="postou">Trabalhou nas redes hoje?</label>
+        <select name="postou" id="postou">
+          <option class="verde" value="2">Realizou todas tarefas planejadas para o dia (2%)</option>
+          <option class="amarelo" value="0">Poucos Storys ou faltou alguma tarefa no dia (0%)</option>
+          <option class="vermelho" value="-2" selected>Esqueceu as redes sociais hoje (-2%)</option>
         </select>
+        
+       
       
         <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
         <select name="projeto" id="projeto">
@@ -175,9 +164,8 @@
         let meditar = Number(document.getElementById("meditar").value);
         let intelectual = Number(document.getElementById("intelectual").value);
         let idioma = Number(document.getElementById("idioma").value);
-        let boxe = Number(document.getElementById("boxe").value);
-        let enem = Number(document.getElementById("enem").value);
-        
+   
+        let postou = Number(document.getElementById("postou").value);
         let projeto = Number(document.getElementById("projeto").value);
 
         let resultado = document.getElementById("resultado");
@@ -193,9 +181,8 @@
           biblia +
           meditar +
           intelectual +
+          postou +
           idioma +
-          boxe +
-          enem +
           projeto) + 
           "%";
       }
