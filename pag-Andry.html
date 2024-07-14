@@ -149,8 +149,8 @@
         </select>
         <label for="orar">Orou hoje? </label>
         <select name="orar" id="orar">
-          <option class="vermelho" value="0">Sim (0%)</option>
-          <option class="amarelo" value="-2" selected>Não (-2%)</option>
+          <option class="vermelho" value="0" selected>Sim (0%)</option>
+          <option class="amarelo" value="-2">Não (-2%)</option>
         </select>
       </fieldset>
     </section>
@@ -188,7 +188,7 @@
         if (atividadeFisica === 2) {
           dieta = 0;
         } else {
-          dieta = Number(document.getElementById("atividadeFisica").value);
+          dieta = Number(document.getElementById("dieta").value);
         }
 
         let resultado = document.getElementById("resultado");
