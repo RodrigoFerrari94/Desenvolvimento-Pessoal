@@ -37,9 +37,9 @@
         </select>
         <label for="familia">Passou tempo de qualidade com sua família? </label>
         <select name="familia" id="familia">
-          <option class="verde" value="1">Mais de 1 hora (1%)</option>
+          <option class="verde" value="2">Mais de 1 hora (2%)</option>
           <option class="amarelo" value="0">Até 1 hora (0%)</option>
-          <option class="vermelho" value="-1" selected>
+          <option class="vermelho" value="-2" selected>
             Dia corrido (-1%)
           </option>
         </select>
@@ -89,32 +89,17 @@
       </fieldset>
       <fieldset>
         <legend>Desenvolvimento Profissional</legend>
-        <label for="idioma">Estudou ou praticou algum idioma hoje?</label>
-        <select name="idioma" id="idioma">
-          <option class="verde" value="1" selected>
-            Estudou/Praticou mais de 30 minutos (1%)
-          </option>
-          <option class="amarelo" value="0">
-            Estudou/Praticou até 30 minutos (0%)
-          </option>
-          <option class="vermelho" value="-1" selected>Não (-1%)</option>
-        </select>
-        <label for="programaçao">Estudou programação hoje?</label>
-        <select name="programaçao" id="programaçao">
-          <option class="verde" value="1">
-            Estudou/Praticou mais de 1 hora (1%)
+        <label for="estudo">Estudou ou praticou hoje Inglês, Programação ou Edição?</label>
+        <select name="estudo" id="estudo">
+          <option class="verde" value="3" selected>
+            Estudou/Praticou mais de 1 hora(3%)
           </option>
           <option class="amarelo" value="0">
             Estudou/Praticou até 1 hora (0%)
           </option>
-          <option class="vermelho" value="-1" selected>Não (-1%)</option>
+          <option class="vermelho" value="-3" selected>Não (-3%)</option>
         </select>
-        <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
-        <select name="projeto" id="projeto">
-          <option class="verde" value="2">Mais de 1 hora (2%)</option>
-          <option class="amarelo" value="0">Até 1 hora (0%)</option>
-          <option class="vermelho" value="-2" selected>Não (-2%)</option>
-        </select>
+        
         <label for="Boxe">Treinou Boxe?</label>
         <select name="Boxe" id="Boxe">
           <option class="verde" value="2">Mais de 40 min (2%)</option>
@@ -191,9 +176,7 @@
         let biblia = Number(document.getElementById("biblia").value);
         let cristo = Number(document.getElementById("cristo").value);
         let intelectual = Number(document.getElementById("intelectual").value);
-        let idioma = Number(document.getElementById("idioma").value);
-        let programacao = Number(document.getElementById("programaçao").value);
-        let projeto = Number(document.getElementById("projeto").value);
+        let estudo = Number(document.getElementById("estudo").value);
         let boxe = Number(document.getElementById("Boxe").value);
 
         if (boxe === 2 || boxe === -2) {
@@ -220,10 +203,8 @@
           biblia +
           cristo +
           intelectual +
-          idioma +
-          programacao +
+          estudo +
           boxe +
-          projeto +
           "%";
       }
     </script>
