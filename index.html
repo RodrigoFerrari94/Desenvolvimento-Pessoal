@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body onload="mostrarHistorico()">
+<body onload="mostrarHistorico(),somar(),adicionarAoHistorico(diaSemana, pontuacao)">
   <header>
     <h1>Rodrigo Ferrari</h1>
     <nav>
@@ -167,13 +167,15 @@
     </select>
     <div id="resultado"></div>
   </div>
-  <div id="historico"></div>
+  <div id="historicoRO"></div>
+  <div id="total"></div>
 
   <script>
 
-    let historicoCalculos = JSON.parse(localStorage.getItem('historico')) || [];
+    let historicoCalculos = JSON.parse(localStorage.getItem('historicoRO')) || [];
     let pontuacao
     function calcular() {
+
       let diaSemana = document.getElementById("diaSemana").value;
       let comerFrutas = Number(document.getElementById("comerFrutas").value);
       let comerPorcaria = Number(
@@ -224,6 +226,7 @@
         "%"
       adicionarAoHistorico(diaSemana, pontuacao);
       mostrarHistorico();
+      somar();
     }
     function adicionarAoHistorico(diaSemana, pontuacao) {
       const index = historicoCalculos.findIndex(calculo => calculo.diaSemana === diaSemana);
@@ -232,24 +235,53 @@
       } else {
         historicoCalculos.push({ diaSemana, pontuacao }); // Adiciona se não existe
       }
-      localStorage.setItem('historico', JSON.stringify(historicoCalculos));
+      localStorage.setItem('historicoRO', JSON.stringify(historicoCalculos));
     }
     function mostrarHistorico() {
-      const historicoDiv = document.getElementById('historico');
-      historicoDiv.innerHTML = '';
+      const historicoDiv = document.getElementById('historicoRO');
+      historicoDiv.innerHTML = ''; // Limpa o histórico anterior
 
-      historicoCalculos.forEach((calculo, index) => {
+      const diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+
+      diasSemana.forEach(dia => {
+        const calculo = historicoCalculos.find(item => item.diaSemana === dia);
+        const pontuacao = calculo ? calculo.pontuacao : 0; // Se não houver cálculo, usa 0
+
         const itemHistorico = document.createElement('p');
-        itemHistorico.innerHTML = `${calculo.diaSemana}: ${calculo.pontuacao}% 
-        <button onclick="apagarCalculo(${index})">Apagar</button>`;
+        itemHistorico.innerHTML = `${dia}: ${pontuacao}% `;
         historicoDiv.appendChild(itemHistorico);
       });
     }
-    function apagarCalculo(index) {
-      historicoCalculos.splice(index, 1);
-      localStorage.setItem('historico', JSON.stringify(historicoCalculos));
-      mostrarHistorico();
+    /*function mostrarHistorico() {
+       const historicoDiv = document.getElementById('historicoRO');
+       historicoDiv.innerHTML = '';
+ 
+       historicoCalculos.forEach((calculo, index) => {
+         const itemHistorico = document.createElement('p');
+         itemHistorico.innerHTML = `${calculo.diaSemana}: ${calculo.pontuacao}% 
+         <button onclick="apagarCalculo(${index})">Apagar</button>`;
+         historicoDiv.appendChild(itemHistorico);
+       });
+     }*/
+    function somar() {
+      const diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+      let totalPontuacao = 0;
+
+      diasSemana.forEach(dia => {
+        const calculo = historicoCalculos.find(item => item.diaSemana === dia);
+        totalPontuacao += calculo ? calculo.pontuacao : 0; // Se não houver cálculo para o dia, considera 0
+      });
+
+      if (totalPontuacao >= 0) {
+        totalPontuacao += 2;
+      } else {
+        totalPontuacao -= 2;
+      }
+
+      const totalDiv = document.getElementById("total");
+      totalDiv.innerHTML = `Nota de Desenvolvimento: ${totalPontuacao}%`;
     }
+
 
   </script>
 </body>
