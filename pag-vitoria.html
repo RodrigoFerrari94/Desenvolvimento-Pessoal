@@ -21,17 +21,17 @@
   <section>
     <fieldset>
       <legend>Saúde Física e Mental</legend>
-      <label for="atividadeFisica">Atividade Física/Dieta? </label>
+      <label for="atividadeFisica">Atividade Física? </label>
       <select name="atividadeFisica" id="atividadeFisica">
-        <option class="verde" value="2">Seguiu Rigorozamente (2%)</option>
-        <option class="amarelo" value="0">Fez Meia Boca (0%)</option>
-        <option class="vermelho" value="-2" selected> Se perdeu (-2%)
+        <option class="verde" value="2">Treinou mais de 1h min(2%)</option>
+        <option class="amarelo" value="0">Se exercitou alguns minutos (0%)</option>
+        <option class="vermelho" value="-2" selected> Não fez atividade física (-2%)
         </option>
       </select>
-      <label for="meditar">Praticou Meditação </label>
+      <label for="meditar">Praticou Meditação/se por em tédio </label>
       <select name="meditar" id="meditar">
-        <option class="verde" value="1">Mais de 30 minutos (1%)</option>
-        <option class="amarelo" value="0">Até 30 minutos (0%)</option>
+        <option class="verde" value="1">Mais de 10 minutos (1%)</option>
+        <option class="amarelo" value="0">Até 10 minutos (0%)</option>
         <option class="vermelho" value="-1" selected> Não (-1%)
         </option>
       </select>
@@ -51,9 +51,15 @@
       <legend>Desenvolvimento Espiritual</legend>
       <label for="biblia">Leu a Bíblia hoje?</label>
       <select name="biblia" id="biblia">
-        <option class="verde" value="2">7 capítulos ou mais (2%)</option>
-        <option class="amarelo" value="0">Até sete capítulos (0%)</option>
+        <option class="verde" value="2">2 capítulos ou mais (2%)</option>
+        <option class="amarelo" value="0">Até 2 capítulos (0%)</option>
         <option class="vermelho" value="-2" selected>Não (-2%)</option>
+      </select>
+
+       <select name="orar" id="orar">
+        <option class="verde" value="1">orou (1%)</option>
+        <option class="amarelo" value="0">agradeceu em família (0%)</option>
+        <option class="vermelho" value="-1" selected>Não (-1%)</option>
       </select>
 
     </fieldset>
@@ -63,9 +69,9 @@
         afins?</label>
 
       <select name="intelectual" id="intelectual">
-        <option class="verde" value="2">Mais de 20 páginas (2%)</option>
-        <option class="amarelo1" value="1">De 10 a 20 páginas (1%)</option>
-        <option class="amarelo" value="0">De 2 a 10 páginas (0%)</option>
+        <option class="verde" value="2">Mais de 5 páginas (2%)</option>
+        <option class="amarelo1" value="1">De 3 a 5 páginas (1%)</option>
+        <option class="amarelo" value="0">De 1 a 3 páginas (0%)</option>
         <option class="vermelho" value="-2" selected>
           Não leu nada (-2%)
         </option>
@@ -75,28 +81,28 @@
       <legend>Desenvolvimento Profissional</legend>
       <label for="idioma">Estudou ou praticou algum idioma hoje?</label>
       <select name="idioma" id="idioma">
-        <option class="verde" value="1" selected>
-          Estudou/Praticou mais de 20 minutos (1%)
+        <option class="verde" value="2" selected>
+          Estudou/Praticou mais de 10 minutos (2%)
         </option>
         <option class="amarelo" value="0">
-          Estudou/Praticou até 20 minutos (0%)
+          Estudou/Praticou até 10 minutos (0%)
         </option>
-        <option class="vermelho" value="-1" selected>Não (-1%)</option>
+        <option class="vermelho" value="-2" selected>Não (-2%)</option>
       </select>
       <label for="postou">Trabalhou nas redes hoje?</label>
       <select name="postou" id="postou">
-        <option class="verde" value="2">Realizou todas tarefas planejadas para o dia (2%)</option>
+        <option class="verde" value="1">Realizou todas tarefas planejadas para o dia (1%)</option>
         <option class="amarelo" value="0">Poucos Storys ou faltou alguma tarefa no dia (0%)</option>
-        <option class="vermelho" value="-2" selected>Esqueceu as redes sociais hoje (-2%)</option>
+        <option class="vermelho" value="-1" selected>Esqueceu as redes sociais hoje (-1%)</option>
       </select>
 
 
 
-      <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
+      <label for="projeto">Gestão e Produção de Eventos?</label>
       <select name="projeto" id="projeto">
-        <option class="verde" value="2">Mais de 1 hora (2%)</option>
-        <option class="amarelo" value="0">Até 1 hora (0%)</option>
-        <option class="vermelho" value="-2" selected>Não (-2%)</option>
+        <option class="verde" value="1">Mais de 30 min (1%)</option>
+        <option class="amarelo" value="0">Até 30 min (0%)</option>
+        <option class="vermelho" value="-1" selected>Não (-1%)</option>
       </select>
     </fieldset>
     <fieldset>
@@ -178,6 +184,7 @@
       let celular = Number(document.getElementById("celular").value);
       let alcool = Number(document.getElementById("alcool").value);
       let biblia = Number(document.getElementById("biblia").value);
+      let orar = Number(document.getElementById("orar").value);
       let meditar = Number(document.getElementById("meditar").value);
       let intelectual = Number(document.getElementById("intelectual").value);
       let idioma = Number(document.getElementById("idioma").value);
@@ -196,6 +203,7 @@
         organizacao +
         alcool +
         biblia +
+        orar +
         meditar +
         intelectual +
         postou +
