@@ -26,7 +26,7 @@
         <select name="atividadeFisica" id="atividadeFisica">
           <option class="verde" value="2">Treinou (2%)</option>
           <option class="amarelo" value="0">Fez atividade física(0%)</option>
-          <option class="verde" value="-2" selected>Treinou (-2%)</option>
+          <option class="vermelho" value="-2" selected>Treinou (-2%)</option>
         </select>
 
         <label for="dieta">Alimentação Saudável? </label>
@@ -182,17 +182,7 @@
         let posGraduacao = Number(
           document.getElementById("posGraduacao").value
         );
-        let projeto = Number(document.getElementById("projeto").value);
-        let redesSociais = Number(
-          document.getElementById("redesSociais").value
-        );
-        let dieta;
-
-        if (atividadeFisica === 2) {
-          dieta = 0;
-        } else {
-          dieta = Number(document.getElementById("dieta").value);
-        }
+        let dieta = Number(document.getElementById("dieta").value);
 
         let resultado = document.getElementById("resultado");
         pontuacao =
