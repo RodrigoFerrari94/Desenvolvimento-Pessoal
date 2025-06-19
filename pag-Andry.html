@@ -130,11 +130,6 @@
           <option class="vermelho" value="-2">Sim (-2%)</option>
           <option class="amarelo" value="0" selected>Não (0%)</option>
         </select>
-        <label for="orar">Orou hoje? </label>
-        <select name="orar" id="orar">
-          <option class="vermelho" value="0" selected>Sim (0%)</option>
-          <option class="amarelo" value="-2">Não (-2%)</option>
-        </select>
       </fieldset>
     </section>
     <div id="calc">
@@ -174,7 +169,6 @@
 
         let meditar = Number(document.getElementById("meditar").value);
         let celular = Number(document.getElementById("celular").value);
-        let orar = Number(document.getElementById("orar").value);
 
         let biblia = Number(document.getElementById("biblia").value);
         let cristo = Number(document.getElementById("cristo").value);
@@ -193,7 +187,6 @@
           meditar +
           celular +
           organizacao +
-          orar +
           biblia +
           cristo +
           intelectual +
