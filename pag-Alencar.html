@@ -1,247 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcular Evolução Alencar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calcular Evolução Alencar</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body
+    onload="mostrarHistorico(),somar(),adicionarAoHistorico(diaSemana, pontuacao)"
+  >
+    <header>
+      <h1>Alencar</h1>
+      <nav>
+        <a href="index.html">Rodrigo</a>
+        <a href="pag-Alencar.html">Alencar</a>
+        <a href="pag-Andry.html">Andriele</a>
+        <a href="pag-vitoria.html">Vitória</a>
+      </nav>
+    </header>
+    <section>
+      <fieldset>
+        <legend>Saúde Física e Mental</legend>
 
-<body onload="mostrarHistorico(),somar(),adicionarAoHistorico(diaSemana, pontuacao)">
-  <header>
-    <h1>Alencar</h1>
-    <nav>
-      <a href="index.html">Rodrigo</a>
-      <a href="pag-Alencar.html">Alencar</a>
-      <a href="pag-Andry.html">Andriele</a>
-      <a href="pag-vitoria.html">Vitória</a>
-    </nav>
-  </header>
-  <section>
-    <fieldset>
-      <legend>Saúde Física e Mental</legend>
+        <label for="dormir">Dormiu quantas horas? </label>
+        <select name="dormir" id="dormir">
+          <option value="1">7 a 8 horas (1%)</option>
+          <option value="0">6 horas (0%)</option>
+          <option value="-1" selected>- de 6 ou + de 8 horas (-1%)</option>
+        </select>
+        <label for="familia">Passou tempo de qualidade com sua família? </label>
+        <select name="familia" id="familia">
+          <option value="2">Mais de 1 hora (2%)</option>
+          <option value="0">Até 1 hora (0%)</option>
+          <option value="-2" selected>Dia corrido (-2%)</option>
+        </select>
+        <label for="meditar">Praticou Meditação? </label>
+        <select name="meditar" id="meditar">
+          <option value="1">Mais de 5 minutos (1%)</option>
+          <option value="0">Até 5 minutos (0%)</option>
+          <option value="-1" selected>Não Praticou (-1%)</option>
+        </select>
+      </fieldset>
 
-      <label for="atividadeFisica">Atividade Física? </label>
-      <select name="atividadeFisica" id="atividadeFisica">
-        <option value="2">Treinei mais de 1 hora (2%)</option>
-        <option value="0">Até 1 Hora de treino (0%)</option>
-        <option value="-2" selected>Sem Treino (-2%)</option>
-      </select>
+      <fieldset>
+        <legend>Desenvolvimento Espiritual</legend>
+        <label for="biblia">Leu a Bíblia hoje?</label>
+        <select name="biblia" id="biblia">
+          <option value="2">1 página (2%)</option>
+          <option value="0">Menos de 1 página (0%)</option>
+          <option value="-2" selected>Não (-2%)</option>
+        </select>
+        <label for="cristo">Orar?</label>
+        <select name="cristo" id="cristo">
+          <option value="1">Meditei e orei/congreguei (1%)</option>
+          <option value="0">Agradeceu (0%)</option>
+          <option value="-1" selected>Não meditei (-1%)</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Desenvolvimento Intelectual</legend>
+        <label for="intelectual"
+          >Leu algum livro de evolução emocional,finanças, oratória ou
+          afins?</label
+        >
+        <select name="intelectual" id="intelectual">
+          <option value="2">Mais de 15 páginas (2%)</option>
+          <option value="1">De 7 a 15 páginas (1%)</option>
+          <option value="0">De 2 a 7 páginas (0%)</option>
+          <option value="-2" selected>Não leu nada (-2%)</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Desenvolvimento Profissional</legend>
+        <label for="idioma">Estudou Duolingo?</label>
+        <select name="idioma" id="idioma">
+          <option value="2">Estudou/Praticou mais de 20 minutos (2%)</option>
+          <option value="0">Estudou/Praticou até 20 minutos (0%)</option>
+          <option value="-2" selected>Não (-2%)</option>
+        </select>
+        <label for="treinoJiu">Treinou Lutas e Preparação?</label>
+        <select name="treinoJiu" id="treinoJiu">
+          <option value="3">Completou o cronograma diário(3%)</option>
+          <option value="0">Fez parte do cronograma de treino (0%)</option>
+          <option value="-3" selected>Não treinou (-3%)</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Bons e Maus Hábitos</legend>
 
-      <label for="dormir">Dormiu quantas horas? </label>
-      <select name="dormir" id="dormir">
-        <option value="1">7 a 8 horas (1%)</option>
-        <option value="0">6 horas (0%)</option>
-        <option value="-1" selected>- de 6 ou + de 8 horas (-1%)</option>
-      </select>
-      <label for="familia">Passou tempo de qualidade com sua família? </label>
-      <select name="familia" id="familia">
-        <option value="1">Mais de 1 hora (1%)</option>
-        <option value="0">Até 1 hora (0%)</option>
-        <option value="-1" selected>Dia corrido (-1%)</option>
-      </select>
-      <label for="meditar">Praticou Meditação? </label>
-      <select name="meditar" id="meditar">
-        <option value="1">Mais de 10 minutos (1%)</option>
-        <option value="0">Até 10 minutos (0%)</option>
-        <option value="-1" selected>Não Praticou (-1%)</option>
-      </select>
-    </fieldset>
+        <label for="dieta">Alimentação Saldável?</label>
+        <select name="dieta" id="dieta">
+          <option value="0" selected>Sim (0%)</option>
+          <option value="-1">Não (-1%)</option>
+        </select>
+        <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
+        <select name="comerPorcaria" id="comerPorcaria">
+          <option value="-2">Sim (-1%)</option>
+          <option value="0" selected>Não (0%)</option>
+        </select>
+        <label for="beberAgua">Bebeu quanto de água hoje? </label>
+        <select name="beberAgua" id="beberAgua">
+          <option value="0" selected>Mais de 2 litros (0%)</option>
+          <option value="-2">Menos de 2 litros (-2%)</option>
+        </select>
+        <label for="organizaçao">Organizou suas coisas em casa? </label>
+        <select name="organizaçao" id="organizaçao">
+          <option value="0" selected>Sim (0%)</option>
+          <option value="-2">Não (-2%)</option>
+        </select>
 
-    <fieldset>
-      <legend>Desenvolvimento Espiritual</legend>
-      <label for="biblia">Leu a Bíblia hoje?</label>
-      <select name="biblia" id="biblia">
-        <option value="2">1 página (2%)</option>
-        <option value="0">Menos de 1 página (0%)</option>
-        <option value="-2" selected>Não (-2%)</option>
-      </select>
-      <label for="cristo">Se conectar com Cristo?</label>
-      <select name="cristo" id="cristo">
-        <option value="1">Meditei e orei/congreguei (1%)</option>
-        <option value="0">Meditei alguns minutos (0%)</option>
-        <option value="-1" selected>Não meditei (-1%)</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <legend>Desenvolvimento Intelectual</legend>
-      <label for="intelectual">Leu algum livro de evolução emocional,finanças, oratória ou
-        afins?</label>
-      <select name="intelectual" id="intelectual">
-        <option value="2">Mais de 15 páginas (2%)</option>
-        <option value="1">De 7 a 15 páginas (1%)</option>
-        <option value="0">De 2 a 7 páginas (0%)</option>
-        <option value="-2" selected>Não leu nada (-2%)</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <legend>Desenvolvimento Profissional</legend>
-      <label for="idioma">Estudou Duolingo?</label>
-      <select name="idioma" id="idioma">
-        <option value="1">Estudou/Praticou mais de 20 minutos (1%)</option>
-        <option value="0">Estudou/Praticou até 20 minutos (0%)</option>
-        <option value="-1" selected>Não (-1%)</option>
-      </select>
-      <label for="oratoria"> Praticou Oratória hoje?</label>
-      <select name="oratoria" id="oratoria">
-        <option value="1">Treinou ou Gravou um video falando (1%)</option>
-        <option value="0">Estudou mas não Praticou? (0%)</option>
-        <option value="-1" selected>Não (-1%)</option>
-      </select>
-      <label for="treinoJiu">Treinou JiuJitso hoje?</label>
-      <select name="treinoJiu" id="treinoJiu">
-        <option value="2">Treinou mais de 40 minutos (2%)</option>
-        <option value="0" selected>Treinou até 40 minutos (0%)</option>
-      </select>
-      <label for="projeto">Trabalhou no seu projeto de Milhões hoje?</label>
-      <select name="projeto" id="projeto">
-        <option value="2">Mais de 1 hora (2%)</option>
-        <option value="0">Até 1 hora (0%)</option>
-        <option value="-2" selected>Não (-2%)</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <legend>Bons e Maus Hábitos</legend>
+        <label for="celular"
+          >Perdeu tempo nas redes sociais ou outras atividades procastinadoras?
+        </label>
+        <select name="celular" id="celular">
+          <option value="-2">Sim (-2%)</option>
+          <option value="0" selected>Não (0%)</option>
+        </select>
+        <label for="cafe">Bebeu café a noite? </label>
+        <select name="cafe" id="cafe">
+          <option value="-1">Sim (-1%)</option>
+          <option value="0" selected>Não (0%)</option>
+        </select>
+      </fieldset>
+    </section>
 
-      <label for="dieta">Alimentação Saldável?</label>
-      <select name="dieta" id="dieta">
-        <option value="0" selected>Sim (0%)</option>
-        <option value="-1">Não (-1%)</option>
+    <div id="calc">
+      <input type="button" value="Calcular" onclick="calcular()" />
+      <label for="diaSemana"></label>
+      <select name="diaSemana" id="diaSemana">
+        <option value="Domingo">Domingo</option>
+        <option value="Segunda">Segunda</option>
+        <option value="Terça">Terça</option>
+        <option value="Quarta">Quarta</option>
+        <option value="Quinta">Quinta</option>
+        <option value="Sexta">Sexta</option>
+        <option value="Sábado">Sábado</option>
+         
       </select>
-      <label for="comerPorcaria">Comeu doces ou frituras em excesso? </label>
-      <select name="comerPorcaria" id="comerPorcaria">
-        <option value="-2">Sim (-1%)</option>
-        <option value="0" selected>Não (0%)</option>
-      </select>
-      <label for="beberAgua">Bebeu quanto de água hoje? </label>
-      <select name="beberAgua" id="beberAgua">
-        <option value="0" selected>Mais de 2 litros (0%)</option>
-        <option value="-2">Menos de 2 litros (-2%)</option>
-      </select>
-      <label for="organizaçao">Organizou suas coisas em casa? </label>
-      <select name="organizaçao" id="organizaçao">
-        <option value="0" selected>Sim (0%)</option>
-        <option value="-2">Não (-2%)</option>
-      </select>
+      <div id="resultado"></div>
+    </div>
+    <div id="historicoAL"></div>
+    <div id="total"></div>
 
-      <label for="celular">Perdeu tempo nas redes sociais ou outras atividades procastinadoras?
-      </label>
-      <select name="celular" id="celular">
-        <option value="-2">Sim (-2%)</option>
-        <option value="0" selected>Não (0%)</option>
-      </select>
-      <label for="cafe">Bebeu café a noite? </label>
-      <select name="cafe" id="cafe">
-        <option value="-1">Sim (-1%)</option>
-        <option value="0" selected>Não (0%)</option>
-      </select>
-    </fieldset>
-  </section>
-
-  <div id="calc">
-    <input type="button" value="Calcular" onclick="calcular()">
-    <label for="diaSemana"></label>
-    <select name="diaSemana" id="diaSemana">
-      <option value="Domingo">Domingo</option>
-      <option value="Segunda">Segunda</option>
-      <option value="Terça">Terça</option>
-      <option value="Quarta">Quarta</option>
-      <option   value="Quinta">Quinta</option>
-      <option value="Sexta">Sexta</option>
-      <option value="Sábado">Sábado</option>  
-
-    </select>
-    <div id="resultado"></div>
-  </div>
-  <div id="historicoAL"></div>
-  <div id="total"></div>
-
-  <script>
-    let historicoCalculos = JSON.parse(localStorage.getItem('historicoAL')) || [];
-    let pontuacao
-    let total = documet.getElementById("total");
-    function calcular() {
-
-      let diaSemana = document.getElementById("diaSemana").value;
-      let dieta = Number(document.getElementById("dieta").value);
-      let comerPorcaria = Number(
-        document.getElementById("comerPorcaria").value
-      );
-      let beberAgua = Number(document.getElementById("beberAgua").value);
-      let atividadeFisica;
-      let organizacao = Number(document.getElementById("organizaçao").value);
-      let dormir = Number(document.getElementById("dormir").value);
-      let familia = Number(document.getElementById("familia").value);
-      let meditar = Number(document.getElementById("meditar").value);
-      let celular = Number(document.getElementById("celular").value);
-      let cafe = Number(document.getElementById("cafe").value);
-      let biblia = Number(document.getElementById("biblia").value);
-      let cristo = Number(document.getElementById("cristo").value);
-      let intelectual = Number(document.getElementById("intelectual").value);
-      let idioma = Number(document.getElementById("idioma").value);
-      let oratoria = Number(document.getElementById("oratoria").value);
-      let treinoJiu = Number(document.getElementById("treinoJiu").value);
-      let projeto = Number(document.getElementById("projeto").value);
-
-      if (treinoJiu === 2) {
-        atividadeFisica = 0;
-      } else {
-        atividadeFisica = Number(
-          document.getElementById("atividadeFisica").value
+    <script>
+      let historicoCalculos =
+        JSON.parse(localStorage.getItem("historicoAL")) || [];
+      let pontuacao;
+      let total = documet.getElementById("total");
+      function calcular() {
+        let diaSemana = document.getElementById("diaSemana").value;
+        let dieta = Number(document.getElementById("dieta").value);
+        let comerPorcaria = Number(
+          document.getElementById("comerPorcaria").value
         );
+        let beberAgua = Number(document.getElementById("beberAgua").value);
+
+        let organizacao = Number(document.getElementById("organizaçao").value);
+        let dormir = Number(document.getElementById("dormir").value);
+        let familia = Number(document.getElementById("familia").value);
+        let meditar = Number(document.getElementById("meditar").value);
+        let celular = Number(document.getElementById("celular").value);
+        let cafe = Number(document.getElementById("cafe").value);
+        let biblia = Number(document.getElementById("biblia").value);
+        let cristo = Number(document.getElementById("cristo").value);
+        let intelectual = Number(document.getElementById("intelectual").value);
+        let idioma = Number(document.getElementById("idioma").value);
+
+        let treinoJiu = Number(document.getElementById("treinoJiu").value);
+
+        let resultado = document.getElementById("resultado");
+        pontuacao =
+          dieta +
+          comerPorcaria +
+          beberAgua +
+          dormir +
+          familia +
+          meditar +
+          celular +
+          organizacao +
+          cafe +
+          treinoJiu +
+          biblia +
+          cristo +
+          intelectual +
+          idioma;
+        resultado.innerHTML = pontuacao + "%";
+        adicionarAoHistorico(diaSemana, pontuacao);
+        mostrarHistorico();
+        somar();
       }
-
-      let resultado = document.getElementById("resultado");
-      pontuacao =
-        dieta +
-        comerPorcaria +
-        beberAgua +
-        atividadeFisica +
-        dormir +
-        familia +
-        meditar +
-        celular +
-        organizacao +
-        cafe +
-        treinoJiu +
-        biblia +
-        cristo +
-        intelectual +
-        idioma +
-        oratoria +
-        projeto;
-      resultado.innerHTML = pontuacao +
-        "%"
-      adicionarAoHistorico(diaSemana, pontuacao);
-      mostrarHistorico();
-      somar();
-    }
-    function adicionarAoHistorico(diaSemana, pontuacao) {
-      const index = historicoCalculos.findIndex(calculo => calculo.diaSemana === diaSemana);
-      if (index > -1) {
-        historicoCalculos[index] = { diaSemana, pontuacao }; // Sobrescreve se já existe
-      } else {
-        historicoCalculos.push({ diaSemana, pontuacao }); // Adiciona se não existe
+      function adicionarAoHistorico(diaSemana, pontuacao) {
+        const index = historicoCalculos.findIndex(
+          (calculo) => calculo.diaSemana === diaSemana
+        );
+        if (index > -1) {
+          historicoCalculos[index] = { diaSemana, pontuacao }; // Sobrescreve se já existe
+        } else {
+          historicoCalculos.push({ diaSemana, pontuacao }); // Adiciona se não existe
+        }
+        localStorage.setItem("historicoAL", JSON.stringify(historicoCalculos));
       }
-      localStorage.setItem('historicoAL', JSON.stringify(historicoCalculos));
-    }
-    function mostrarHistorico() {
-      const historicoDiv = document.getElementById('historicoAL');
-      historicoDiv.innerHTML = ''; // Limpa o histórico anterior
+      function mostrarHistorico() {
+        const historicoDiv = document.getElementById("historicoAL");
+        historicoDiv.innerHTML = ""; // Limpa o histórico anterior
 
-      const diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+        const diasSemana = [
+          "Domingo",
+          "Segunda",
+          "Terça",
+          "Quarta",
+          "Quinta",
+          "Sexta",
+          "Sábado",
+        ];
 
-      diasSemana.forEach(dia => {
-        const calculo = historicoCalculos.find(item => item.diaSemana === dia);
-        const pontuacao = calculo ? calculo.pontuacao : 0; // Se não houver cálculo, usa 0
+        diasSemana.forEach((dia) => {
+          const calculo = historicoCalculos.find(
+            (item) => item.diaSemana === dia
+          );
+          const pontuacao = calculo ? calculo.pontuacao : 0; // Se não houver cálculo, usa 0
 
-        const itemHistorico = document.createElement('p');
-        itemHistorico.innerHTML = `${dia}: ${pontuacao}% `;
-        historicoDiv.appendChild(itemHistorico);
-      });
-    }
-    /*function mostrarHistorico() {
+          const itemHistorico = document.createElement("p");
+          itemHistorico.innerHTML = `${dia}: ${pontuacao}% `;
+          historicoDiv.appendChild(itemHistorico);
+        });
+      }
+      /*function mostrarHistorico() {
        const historicoDiv = document.getElementById('historicoAL');
        historicoDiv.innerHTML = '';
  
@@ -252,25 +237,34 @@
          historicoDiv.appendChild(itemHistorico);
        });
      }*/
-    function somar() {
-      const diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
-      let totalPontuacao = 0;
+      function somar() {
+        const diasSemana = [
+          "Domingo",
+          "Segunda",
+          "Terça",
+          "Quarta",
+          "Quinta",
+          "Sexta",
+          "Sábado",
+        ];
+        let totalPontuacao = 0;
 
-      diasSemana.forEach(dia => {
-        const calculo = historicoCalculos.find(item => item.diaSemana === dia);
-        totalPontuacao += calculo ? calculo.pontuacao : 0; // Se não houver cálculo para o dia, considera 0
-      });
+        diasSemana.forEach((dia) => {
+          const calculo = historicoCalculos.find(
+            (item) => item.diaSemana === dia
+          );
+          totalPontuacao += calculo ? calculo.pontuacao : 0; // Se não houver cálculo para o dia, considera 0
+        });
 
-      if (totalPontuacao >= 0) {
-        totalPontuacao += 2;
-      } else {
-        totalPontuacao -= 2;
+        if (totalPontuacao >= 0) {
+          totalPontuacao += 2;
+        } else {
+          totalPontuacao -= 2;
+        }
+
+        const totalDiv = document.getElementById("total");
+        totalDiv.innerHTML = `Nota de Desenvolvimento: ${totalPontuacao}%`;
       }
-
-      const totalDiv = document.getElementById("total");
-      totalDiv.innerHTML = `Nota de Desenvolvimento: ${totalPontuacao}%`;
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
